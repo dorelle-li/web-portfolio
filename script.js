@@ -80,10 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const keywordArray = keywords.split(',').map(k => k.trim());
             
-            // Check if project matches any selected keyword
-            const matches = keywordArray.some(keyword => selectedKeywords.has(keyword));
+            // Check if project matches ALL selected keywords (AND logic)
+            const selectedKeywordsArray = Array.from(selectedKeywords);
+            const matchesAll = selectedKeywordsArray.every(selectedKeyword => 
+                keywordArray.includes(selectedKeyword)
+            );
             
-            if (matches) {
+            if (matchesAll) {
                 item.classList.add('visible');
             } else {
                 item.classList.remove('visible');
