@@ -144,10 +144,11 @@ body {
     .filtered-image-item:nth-child(1) { top: 0; left: 0; width: 150px; }
     .filtered-image-item:nth-child(2) { top: 60px; left: 170px; width: 140px; }
     .filtered-image-item:nth-child(3) { top: 15px; right: 150px; width: 150px; }
-    .filtered-image-item:nth-child(4) { top: 200px; left: 80px; width: 140px; }
+    .filtered-image-item:nth-child(4) { bottom: 40px; right: 80px; width: 140px; }
     .filtered-image-item:nth-child(5) { top: 240px; right: 120px; width: 140px; }
     .filtered-image-item:nth-child(6) { bottom: 80px; left: 40px; width: 150px; }
-    .filtered-image-item:nth-child(7) { bottom: 40px; right: 80px; width: 140px; }
+    .filtered-image-item:nth-child(7) { top: 200px; left: 80px; width: 140px; }
+    .filtered-image-item:nth-child(8) { top: 300px; left: 30px; width: 130px; }
 }
 
 @media (max-width: 768px) {
@@ -158,10 +159,11 @@ body {
     .filtered-image-item:nth-child(1) { top: 0; left: 0; width: 120px; }
     .filtered-image-item:nth-child(2) { top: 50px; left: 130px; width: 110px; }
     .filtered-image-item:nth-child(3) { top: 10px; right: 100px; width: 120px; }
-    .filtered-image-item:nth-child(4) { top: 160px; left: 60px; width: 110px; }
+    .filtered-image-item:nth-child(4) { bottom: 30px; right: 60px; width: 110px; }
     .filtered-image-item:nth-child(5) { top: 190px; right: 90px; width: 110px; }
     .filtered-image-item:nth-child(6) { bottom: 60px; left: 30px; width: 120px; }
-    .filtered-image-item:nth-child(7) { bottom: 30px; right: 60px; width: 110px; }
+    .filtered-image-item:nth-child(7) { top: 160px; left: 60px; width: 110px; }
+    .filtered-image-item:nth-child(8) { top: 250px; left: 20px; width: 100px; }
 }
 
 .filtered-image-item {
@@ -181,50 +183,57 @@ body {
 /* Child 1: lamp.jpg - Bamboo Lamp (bamboolamp) */
 .filtered-image-item:nth-child(1) {
     top: 12%;
-    left: 42%;
+    left: 40%;
     width: 14%;
 }
 
 /* Child 2: Boardgame.jpg - 9-5 (9-5) */
 .filtered-image-item:nth-child(2) {
     top: 0;
-    left: 15%;
+    left: 10%;
     width: 20%;
 }
 
 /* Child 3: mushlamp.png - Timer Speaker (speakerlamp) */
 .filtered-image-item:nth-child(3) {
-    top: 2.2%;
-    right: 10%;
+    top: 0%;
+    right: 8%;
     width: 18%;
 }
 
 /* Child 4: appp.png - Reading App (readingapp) */
 .filtered-image-item:nth-child(4) {
-    top: 70%;
-    left: 30%;
-    width: 17%;
+    bottom: 12%;
+    right: 0%;
+    width: 22%;
 }
 
 /* Child 5: Spam.jpg - Easy SPAM (easyspam) */
 .filtered-image-item:nth-child(5) {
-    top: 44.4%;
-    right: 25%;
+    top: 40%;
+    right: 28%;
     width: 12%;
 }
 
 /* Child 6: Bag.jpeg - Camera Bag (camerabag) */
 .filtered-image-item:nth-child(6) {
     bottom: 12%;
-    left: 1%;
+    left: 0%;
     width: 12%;
 }
 
 /* Child 7: headphone.png - Spagehetti Headphone (headphone) */
 .filtered-image-item:nth-child(7) {
-    bottom: 10%;
-    right: 0%;
-    width: 21%;
+    top: 75%;
+    left: 52%;
+    width: 13%;
+}
+
+/* Child 8: puzz.png - Puzzle (puzzle) */
+.filtered-image-item:nth-child(8) {
+    top: 50%;
+    left: 22%;
+    width: 13%;
 }
 
 .filtered-image-item.visible {
