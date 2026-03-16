@@ -1,5 +1,54 @@
-// Wait for DOM to be fully loaded
+// Translation system
+let currentLang = 'en';
+
+function translatePage(lang) {
+    const elements = document.querySelectorAll('[data-zh]');
+    elements.forEach(element => {
+        if (lang === 'zh') {
+            // Store original English HTML if not already stored
+            if (!element.dataset.en) {
+                element.dataset.en = element.innerHTML;
+            }
+            // Set Chinese translation
+            element.innerHTML = element.dataset.zh;
+        } else {
+            // Restore English text
+            if (element.dataset.en) {
+                element.innerHTML = element.dataset.en;
+            }
+        }
+    });
+    
+    // Update toggle button text
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.textContent = lang === 'zh' ? 'EN' : '中文';
+    }
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+    
+    // Save preference to localStorage
+    localStorage.setItem('preferredLang', lang);
+}
+
+// Initialize language from localStorage or default to English
 document.addEventListener('DOMContentLoaded', () => {
+    // Check for saved language preference
+    const savedLang = localStorage.getItem('preferredLang');
+    if (savedLang === 'zh') {
+        currentLang = 'zh';
+        translatePage('zh');
+    }
+    
+    // Language toggle button
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            translatePage(currentLang);
+        });
+    }
     // Function to handle project navigation
     function navigateToProject(projectId) {
         // Navigate to the project page

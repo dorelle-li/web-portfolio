@@ -100,6 +100,28 @@ body {
     outline-offset: 2px;
 }
 
+.lang-toggle-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: inherit;
+    font-size: inherit;
+    margin-right: 10px;
+}
+
+.lang-toggle-btn:hover {
+    background: var(--color-border);
+    color: var(--color-bg);
+}
+
+.lang-toggle-btn:focus {
+    outline: 2px solid var(--color-border);
+    outline-offset: 2px;
+}
+
 /* HERO */
 .hero {
     grid-column: span 12;
@@ -624,6 +646,17 @@ body {
     .keyword-btn {
         padding: 6px 12px;
         font-size: 0.85rem;
+    }
+    
+    .lang-toggle-btn {
+        padding: 6px 16px;
+        font-size: 0.9rem;
+        margin-right: 8px;
+    }
+    
+    .info-btn {
+        padding: 6px 16px;
+        font-size: 0.9rem;
     }
     
     .project-grid {

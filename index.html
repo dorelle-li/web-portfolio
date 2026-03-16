@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Product designer focusing on minimalist interfaces and digital archival systems.">
         <title>Portfolio | Dorelle Li</title>
+        <link rel="canonical" href="https://dorelle-li.github.io/web-portfolio/">
+        <meta property="og:url" content="https://dorelle-li.github.io/web-portfolio/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Portfolio | Dorelle Li">
+        <meta property="og:description" content="Product designer focusing on minimalist interfaces and digital archival systems.">
         <link rel="stylesheet" href="styles.css">
     </head>
 <body>
@@ -14,13 +19,14 @@
                 <h1 class="logo">Dorelle Li</h1>
             </div>
             <div class="header-right">
-                <button class="info-btn" aria-label="View artist information">Artist Info</button>
+                <button class="lang-toggle-btn" id="langToggle" aria-label="Toggle language">中文</button>
+                <button class="info-btn" aria-label="View artist information" data-zh="艺术家信息">Artist Info</button>
             </div>
         </header>
     
         <main class="container">
             <section class="hero">
-                <h2 class="bio-text"> 
+                <h2 class="bio-text" data-zh="产品设计师，目前就读于罗德岛设计学院。<br>她的作品结合实验性和深思熟虑的问题解决方式<br>来构建可访问、有意图且有趣的产品。"> 
                     Product designer currently studying at Rhode Island School of Design.  <br>
                     Her work combines experimentation and thoughtful problem-solving <br>
                     to build accessible, intentional, and fun products.
@@ -59,19 +65,19 @@
 
             <section class="filter-section">
                 <div class="filter-sidebar">
-                    <h3 class="filter-title">Filter by</h3>
+                    <h3 class="filter-title" data-zh="筛选">Filter by</h3>
                     <div class="keyword-list">
-                        <button class="keyword-btn" data-keyword="Redesign">Redesign</button>
-                        <button class="keyword-btn" data-keyword="Material-driven">Material-driven</button>
-                        <button class="keyword-btn" data-keyword="Human-Centered">Human-Centered</button>
-                        <button class="keyword-btn" data-keyword="Interactive">Interactive</button>
-                        <button class="keyword-btn" data-keyword="Digital experience">Digital experience</button>
-                        <button class="keyword-btn" data-keyword="Fabrication and Craft">Fabrication and Craft</button>
-                        <button class="keyword-btn" data-keyword="Play">Play</button>
-                        <button class="keyword-btn" data-keyword="Edible?">Edible?</button>
-                        <button class="keyword-btn" data-keyword="To live easier">To live easier</button>
+                        <button class="keyword-btn" data-keyword="Redesign" data-zh="重新设计">Redesign</button>
+                        <button class="keyword-btn" data-keyword="Material-driven" data-zh="材料驱动">Material-driven</button>
+                        <button class="keyword-btn" data-keyword="Human-Centered" data-zh="以人为本">Human-Centered</button>
+                        <button class="keyword-btn" data-keyword="Interactive" data-zh="交互式">Interactive</button>
+                        <button class="keyword-btn" data-keyword="Digital experience" data-zh="数字体验">Digital experience</button>
+                        <button class="keyword-btn" data-keyword="Fabrication and Craft" data-zh="制作与工艺">Fabrication and Craft</button>
+                        <button class="keyword-btn" data-keyword="Play" data-zh="游戏">Play</button>
+                        <button class="keyword-btn" data-keyword="Edible?" data-zh="可食用？">Edible?</button>
+                        <button class="keyword-btn" data-keyword="To live easier" data-zh="让生活更轻松">To live easier</button>
                     </div>
-                    <button class="clear-filter-btn">Clear all</button>
+                    <button class="clear-filter-btn" data-zh="清除全部">Clear all</button>
                 </div>
             </section>
     
@@ -82,9 +88,9 @@
                         <img src="img/lamp.jpg" alt="Project 6">
                     </div>
                     <div class="project-meta">
-                        <h3>Bamboo Lamp</h3>
-                        <p>Spring 2025</p>
-                        <div class="tags">Material-driven, Fabrication and Craft</div>
+                        <h3 data-zh="竹灯">Bamboo Lamp</h3>
+                        <p data-zh="2025年春季">Spring 2025</p>
+                        <div class="tags" data-zh="材料驱动，制作与工艺">Material-driven, Fabrication and Craft</div>
                     </div>
                 </div>
 
@@ -93,9 +99,9 @@
                         <img src="img/Boardgame.jpg" alt="Secondary Project - Boardgame design">
                     </div>
                     <div class="project-meta">
-                        <h3>9-5 </h3>
-                        <p>Fall 2025</p>
-                        <div class="tags">Redesign, Human-Centered, Interactive, Fabrication and Craft, Play</div>
+                        <h3 data-zh="9-5">9-5 </h3>
+                        <p data-zh="2025年秋季">Fall 2025</p>
+                        <div class="tags" data-zh="重新设计，以人为本，交互式，制作与工艺，游戏">Redesign, Human-Centered, Interactive, Fabrication and Craft, Play</div>
                     </div>
                 </div>
 
@@ -104,9 +110,9 @@
                         <img src="img/mushlamp.png" alt="Project 7">
                     </div>
                     <div class="project-meta">
-                        <h3>Timer Speaker</h3>
-                        <p>Fall 2025</p>
-                        <div class="tags">Redesign, Human-Centered, Interactive, Digital experience, Edible?, To live easier</div>
+                        <h3 data-zh="定时器扬声器">Timer Speaker</h3>
+                        <p data-zh="2025年秋季">Fall 2025</p>
+                        <div class="tags" data-zh="重新设计，以人为本，交互式，数字体验，可食用？，让生活更轻松">Redesign, Human-Centered, Interactive, Digital experience, Edible?, To live easier</div>
                     </div>
                 </div>
 
@@ -115,9 +121,9 @@
                         <img src="img/appp.png" alt="Project 4">
                     </div>
                     <div class="project-meta">
-                        <h3>Reading App</h3>
-                        <p>Summer 2025</p>
-                        <div class="tags">UI Design | Prototyping</div>
+                        <h3 data-zh="阅读应用">Reading App</h3>
+                        <p data-zh="2025年夏季">Summer 2025</p>
+                        <div class="tags" data-zh="UI设计 | 原型设计">UI Design | Prototyping</div>
                     </div>
                 </div>
 
@@ -126,9 +132,9 @@
                         <img src="img/Spam.jpg" alt="Project 3 - Spam design">
                     </div>
                     <div class="project-meta">
-                        <h3>Easy SPAM</h3>
-                        <p>Fall 2024</p>
-                        <div class="tags">Redesign, Human-Centered, Fabrication and Craft, Edible?</div>
+                        <h3 data-zh="简易SPAM">Easy SPAM</h3>
+                        <p data-zh="2024年秋季">Fall 2024</p>
+                        <div class="tags" data-zh="重新设计，以人为本，制作与工艺，可食用？">Redesign, Human-Centered, Fabrication and Craft, Edible?</div>
                     </div>
                 </div>
 
@@ -137,9 +143,9 @@
                         <img src="img/Bag.jpeg" alt="Feature Project Title - Bag design">
                     </div>
                     <div class="project-meta">
-                        <h3>Camera Bag</h3>
-                        <p>Fall 2025</p>
-                        <div class="tags">Human-Centered, Fabrication and Craft, To live easier</div>
+                        <h3 data-zh="相机包">Camera Bag</h3>
+                        <p data-zh="2025年秋季">Fall 2025</p>
+                        <div class="tags" data-zh="以人为本，制作与工艺，让生活更轻松">Human-Centered, Fabrication and Craft, To live easier</div>
                     </div>
                 </div>
 
@@ -148,9 +154,9 @@
                         <img src="img/puzz.png" alt="Textured Animal Puzzle">
                     </div>
                     <div class="project-meta">
-                        <h3>Textured Animal Puzzle</h3>
-                        <p>Fall 2023</p>
-                        <div class="tags">Play, Material-driven, Human-Centered, Interactive, Fabrication and Craft</div>
+                        <h3 data-zh="纹理动物拼图">Textured Animal Puzzle</h3>
+                        <p data-zh="2023年秋季">Fall 2023</p>
+                        <div class="tags" data-zh="游戏，材料驱动，以人为本，交互式，制作与工艺">Play, Material-driven, Human-Centered, Interactive, Fabrication and Craft</div>
                     </div>
                 </div>
 
@@ -159,9 +165,9 @@
                         <img src="img/headphone.png" alt="Project 5">
                     </div>
                     <div class="project-meta">
-                        <h3>"Spagehetti" Headphone</h3>
-                        <p>Fall 2025</p>
-                        <div class="tags">Redesign, Edible?</div>
+                        <h3 data-zh="“意大利面”耳机">"Spagehetti" Headphone</h3>
+                        <p data-zh="2025年秋季">Fall 2025</p>
+                        <div class="tags" data-zh="重新设计，可食用？">Redesign, Edible?</div>
                     </div>
                 </div>
                 
