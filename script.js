@@ -19,6 +19,11 @@ function translatePage(lang) {
         }
     });
     
+    // Swap images that have English / Chinese asset variants (paths in data attributes)
+    document.querySelectorAll('img[data-src-en][data-src-zh]').forEach((img) => {
+        img.src = lang === 'zh' ? img.getAttribute('data-src-zh') : img.getAttribute('data-src-en');
+    });
+    
     // Update toggle button text
     const langToggle = document.getElementById('langToggle');
     if (langToggle) {

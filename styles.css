@@ -130,7 +130,7 @@ body {
 
 .bio-text {
     font-size: 20px;
-    line-height: 1.1;
+    line-height: 1.38;
     font-weight: 700;
     margin: 0;
     word-spacing: 0.1em;
@@ -302,6 +302,7 @@ body {
     font-size: 0.85rem;
     font-weight: 600;
     margin: 0;
+    line-height: 1.45;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -322,6 +323,7 @@ body {
     transition: all 0.2s;
     font-family: inherit;
     font-size: 0.75rem;
+    line-height: 1.45;
     border-radius: 20px;
 }
 
@@ -344,6 +346,7 @@ body {
     transition: all 0.2s;
     font-family: inherit;
     font-size: 0.7rem;
+    line-height: 1.45;
     opacity: 0.6;
     margin-left: auto;
 }
@@ -424,12 +427,13 @@ body {
     padding: 20px;
 }
 
-.project-meta h3 { margin: 0 0 10px 0; font-weight: 600; }
+.project-meta h3 { margin: 0 0 10px 0; font-weight: 600; line-height: 1.28; }
 .project-meta p { margin: 0; font-size: 0.9rem; color: var(--color-text-secondary); }
 
 .tags {
     margin-top: 15px;
     font-size: 0.75rem;
+    line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 1px;
     /* INPUT: Change color for slate-blue accent */
@@ -451,7 +455,7 @@ body {
     font-size: 48px;
     font-weight: 700;
     margin: 0 0 10px 0;
-    line-height: 1.1;
+    line-height: 1.22;
 }
 
 .project-year {
@@ -462,6 +466,7 @@ body {
 
 .project-tags {
     font-size: 0.75rem;
+    line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--color-accent);
@@ -478,11 +483,12 @@ body {
 
 .project-team li {
     margin: 5px 0;
+    line-height: 1.55;
 }
 
 .project-description {
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.72;
     margin: 0 0 60px 0;
     color: var(--color-text);
 }
@@ -504,11 +510,42 @@ body {
     display: block;
 }
 
+.project-image .sadd-wide {
+    max-width: 105%;
+}
+
+.project-image-section-title {
+    max-width: 60%;
+    width: fit-content;
+    margin: 10px auto 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.section-title-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.section-title-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.project-image-section-title.section-title-top-half {
+    align-items: center;
+}
+
 .project-image-text {
     max-width: 85%;
     margin: 20px 0 0 0;
     font-size: 0.9rem;
-    line-height: 1;
+    line-height: 1.58;
     text-align: center;
 }
 
@@ -518,6 +555,33 @@ body {
 
 .project-image .slightly-larger-image {
     max-width: 95%;
+}
+
+.project-image-side-by-side {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.75rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-image-side-by-side > img {
+    max-width: min(100%, 520px);
+    width: auto;
+    flex-shrink: 0;
+}
+
+.project-image-side-by-side .side-by-side-caption {
+    flex: 0 1 280px;
+    max-width: 280px;
+    margin: 0;
+    padding-top: 0;
+    text-align: left;
+    font-size: 0.85rem;
+    line-height: 1.68;
 }
 
 .project-image-row-link {
@@ -563,6 +627,20 @@ body {
     max-width: 400px;
 }
 
+.project-image-row.headphone-trio {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.project-image-row.headphone-trio img {
+    flex: 1 1 180px;
+    max-width: min(100%, 340px);
+    max-height: 380px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 /* INFO PAGE */
 .info-detail {
     grid-column: span 12;
@@ -588,12 +666,13 @@ body {
 .info-subtitle {
     font-size: 1.5rem;
     font-weight: 600;
+    line-height: 1.35;
     margin: 0 0 15px 0;
 }
 
 .info-text {
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.72;
     margin: 0 0 20px 0;
     color: var(--color-text);
 }
@@ -740,4 +819,52 @@ body {
     .info-subtitle {
         font-size: 1.1rem;
     }
+}
+
+/* Chinese: looser line-height for labels and body copy (lang toggled in script.js) */
+html:lang(zh) .project-image .project-image-text {
+    line-height: 1.75 !important;
+}
+
+html:lang(zh) .project-image-side-by-side .side-by-side-caption {
+    line-height: 1.85 !important;
+}
+
+html:lang(zh) .project-image-section-title .section-title-text {
+    line-height: 1.42;
+}
+
+html:lang(zh) .project-description {
+    line-height: 1.85;
+}
+
+html:lang(zh) .project-tags,
+html:lang(zh) .project-team li {
+    line-height: 1.65;
+}
+
+html:lang(zh) .bio-text {
+    line-height: 1.5;
+}
+
+html:lang(zh) .tags {
+    line-height: 1.6;
+}
+
+html:lang(zh) .filter-title,
+html:lang(zh) .keyword-btn,
+html:lang(zh) .clear-filter-btn {
+    line-height: 1.55;
+}
+
+html:lang(zh) .info-text {
+    line-height: 1.75;
+}
+
+html:lang(zh) .info-subtitle {
+    line-height: 1.45;
+}
+
+html:lang(zh) .project-meta h3 {
+    line-height: 1.35;
 }
