@@ -139,8 +139,8 @@ body {
 /* FILTERED IMAGES SECTION */
 .filtered-images-section {
     grid-column: span 12;
-    padding: 10px var(--spacing-container) 1px var(--spacing-container);
-    min-height: 400px;
+    padding: 10px var(--spacing-container) 56px var(--spacing-container);
+    min-height: 0;
     border-bottom: 1px solid var(--color-border);
     display: flex;
     justify-content: center;
@@ -152,14 +152,14 @@ body {
 .filtered-images-container {
     max-width: 1200px;
     width: 100%;
-    height: 450px;
+    height: 540px;
     margin: 0 auto;
     position: relative;
 }
 
 @media (max-width: 1024px) {
     .filtered-images-container {
-        height: 500px;
+        height: 540px;
         max-width: 100%;
     }
     
@@ -171,11 +171,12 @@ body {
     .filtered-image-item:nth-child(6) { bottom: 80px; left: 40px; width: 150px; }
     .filtered-image-item:nth-child(7) { top: 200px; left: 80px; width: 140px; }
     .filtered-image-item:nth-child(8) { top: 300px; left: 30px; width: 130px; }
+    .filtered-image-item:nth-child(9) { bottom: 20px; right: 180px; width: 125px; }
 }
 
 @media (max-width: 768px) {
     .filtered-images-container {
-        height: 400px;
+        height: 480px;
     }
     
     .filtered-image-item:nth-child(1) { top: 0; left: 0; width: 120px; }
@@ -186,6 +187,7 @@ body {
     .filtered-image-item:nth-child(6) { bottom: 60px; left: 30px; width: 120px; }
     .filtered-image-item:nth-child(7) { top: 160px; left: 60px; width: 110px; }
     .filtered-image-item:nth-child(8) { top: 250px; left: 20px; width: 100px; }
+    .filtered-image-item:nth-child(9) { bottom: 14px; left: 36%; width: 92px; }
 }
 
 .filtered-image-item {
@@ -258,6 +260,13 @@ body {
     width: 13%;
 }
 
+/* Child 9: mat.jpg - Wonder Mat (mat) */
+.filtered-image-item:nth-child(9) {
+    bottom: 4%;
+    right: 38%;
+    width: 12%;
+}
+
 .filtered-image-item.visible {
     visibility: visible;
     opacity: 1;
@@ -286,6 +295,9 @@ body {
     grid-column: span 12;
     padding: 20px var(--spacing-container) 20px var(--spacing-container);
     border-bottom: 1px solid var(--color-border);
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-bg);
 }
 
 .filter-sidebar {
@@ -557,6 +569,53 @@ body {
     max-width: 95%;
 }
 
+/* Reading App: full-width phone mocks, larger than ap1–ap3 row thumbnails */
+.project-image .reading-app-detail-stack {
+    max-width: min(100%, 780px);
+    width: 100%;
+}
+
+/* Wonder Mat page: larger stills + GIFs */
+.project-image.mat-project-images > img {
+    max-width: min(100%, 960px);
+}
+
+.project-image.mat-project-images .mat-png-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 14px;
+}
+
+.project-image.mat-project-images .mat-png-stack img {
+    max-width: min(100%, 820px);
+    width: auto;
+    height: auto;
+}
+
+.project-image.mat-project-images .mat-gif-duo img {
+    max-width: min(49%, 580px);
+}
+
+.project-image.mat-project-images .mat-gif-duo img:nth-child(2) {
+    margin-left: 14px;
+}
+
+/* Tight vertical spacing between mat3 stack and GIF row */
+.project-image .mat-stills-and-gifs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    margin-top: 0;
+}
+
+.project-image .mat-stills-and-gifs .project-image-row {
+    margin-bottom: 0;
+}
+
 .project-image-side-by-side {
     display: flex;
     flex-wrap: wrap;
@@ -705,13 +764,8 @@ body {
     }
     
     .filtered-images-section {
-        padding: 60px var(--spacing-container);
-        min-height: 300px;
-    }
-    
-    .filtered-images-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 12px;
+        padding: 60px var(--spacing-container) 48px var(--spacing-container);
+        min-height: 0;
     }
     
     .filter-section {
