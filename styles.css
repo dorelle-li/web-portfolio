@@ -139,7 +139,7 @@ body {
 /* FILTERED IMAGES SECTION */
 .filtered-images-section {
     grid-column: span 12;
-    padding: 10px var(--spacing-container) 56px var(--spacing-container);
+    padding: 10px var(--spacing-container) -40px var(--spacing-container);
     min-height: 0;
     border-bottom: 1px solid var(--color-border);
     display: flex;
@@ -152,7 +152,7 @@ body {
 .filtered-images-container {
     max-width: 1200px;
     width: 100%;
-    height: 540px;
+    height: 500px;
     margin: 0 auto;
     position: relative;
 }
@@ -163,15 +163,13 @@ body {
         max-width: 100%;
     }
     
+    /* 1 Bamboo Lamp, 2 9-5, 3 Timer Speaker, 4 Easy SPAM, 5 Camera Bag, 6 Wonder Mat */
     .filtered-image-item:nth-child(1) { top: 0; left: 0; width: 150px; }
     .filtered-image-item:nth-child(2) { top: 60px; left: 170px; width: 140px; }
     .filtered-image-item:nth-child(3) { top: 15px; right: 150px; width: 150px; }
     .filtered-image-item:nth-child(4) { bottom: 40px; right: 80px; width: 140px; }
     .filtered-image-item:nth-child(5) { top: 240px; right: 120px; width: 140px; }
     .filtered-image-item:nth-child(6) { bottom: 80px; left: 40px; width: 150px; }
-    .filtered-image-item:nth-child(7) { top: 200px; left: 80px; width: 140px; }
-    .filtered-image-item:nth-child(8) { top: 300px; left: 30px; width: 130px; }
-    .filtered-image-item:nth-child(9) { bottom: 20px; right: 180px; width: 125px; }
 }
 
 @media (max-width: 768px) {
@@ -179,15 +177,13 @@ body {
         height: 480px;
     }
     
+    /* 1 Bamboo Lamp, 2 9-5, 3 Timer Speaker, 4 Easy SPAM, 5 Camera Bag, 6 Wonder Mat */
     .filtered-image-item:nth-child(1) { top: 0; left: 0; width: 120px; }
     .filtered-image-item:nth-child(2) { top: 50px; left: 130px; width: 110px; }
     .filtered-image-item:nth-child(3) { top: 10px; right: 100px; width: 120px; }
     .filtered-image-item:nth-child(4) { bottom: 30px; right: 60px; width: 110px; }
     .filtered-image-item:nth-child(5) { top: 190px; right: 90px; width: 110px; }
     .filtered-image-item:nth-child(6) { bottom: 60px; left: 30px; width: 120px; }
-    .filtered-image-item:nth-child(7) { top: 160px; left: 60px; width: 110px; }
-    .filtered-image-item:nth-child(8) { top: 250px; left: 20px; width: 100px; }
-    .filtered-image-item:nth-child(9) { bottom: 14px; left: 36%; width: 92px; }
 }
 
 .filtered-image-item {
@@ -203,7 +199,8 @@ body {
     pointer-events: none;
 }
 
-/* Free positioning for 7 items - arranged in a collage style */
+/* Free positioning for 6 items - arranged in a collage style
+   Order matches filtered-image-item children in index.html */
 /* Child 1: lamp.jpg - Bamboo Lamp (bamboolamp) */
 .filtered-image-item:nth-child(1) {
     top: 12%;
@@ -214,7 +211,7 @@ body {
 /* Child 2: Boardgame.jpg - 9-5 (9-5) */
 .filtered-image-item:nth-child(2) {
     top: 0;
-    left: 10%;
+    left: 12%;
     width: 20%;
 }
 
@@ -225,46 +222,25 @@ body {
     width: 18%;
 }
 
-/* Child 4: appp.png - Reading App (readingapp) */
+/* Child 4: Spam.png - Easy SPAM (easyspam) */
 .filtered-image-item:nth-child(4) {
     bottom: 12%;
     right: 0%;
     width: 22%;
 }
 
-/* Child 5: Spam.jpg - Easy SPAM (easyspam) */
+/* Child 5: Bag.jpeg - Camera Bag (camerabag) */
 .filtered-image-item:nth-child(5) {
     top: 40%;
     right: 28%;
     width: 12%;
 }
 
-/* Child 6: Bag.jpeg - Camera Bag (camerabag) */
+/* Child 6: mat.jpg - Wonder Mat (mat) */
 .filtered-image-item:nth-child(6) {
     bottom: 12%;
-    left: 0%;
-    width: 12%;
-}
-
-/* Child 7: headphone.png - Spagehetti Headphone (headphone) */
-.filtered-image-item:nth-child(7) {
-    top: 75%;
-    left: 52%;
-    width: 13%;
-}
-
-/* Child 8: puzz.png - Puzzle (puzzle) */
-.filtered-image-item:nth-child(8) {
-    top: 50%;
-    left: 22%;
-    width: 13%;
-}
-
-/* Child 9: mat.jpg - Wonder Mat (mat) */
-.filtered-image-item:nth-child(9) {
-    bottom: 4%;
-    right: 38%;
-    width: 12%;
+    left: 2%;
+    width: 20%;
 }
 
 .filtered-image-item.visible {
@@ -505,6 +481,18 @@ body {
     color: var(--color-text);
 }
 
+/* Wonder Mat lede: larger italic copy, narrower than the hero photo below */
+.project-description.mat-description {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    font-style: italic;
+    font-weight: 300;
+    text-align: center;
+}
+
 .project-image {
     width: 100%;
     display: flex;
@@ -535,6 +523,57 @@ body {
     justify-content: center;
     gap: 10px;
     text-align: left;
+    scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
+/* Sticky left section nav (Muse-style scroll spy) on project pages */
+.project-section-nav {
+    position: fixed;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    max-width: 150px;
+    pointer-events: none;
+}
+
+.project-section-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    pointer-events: auto;
+}
+
+.project-section-nav-link {
+    display: block;
+    color: #9a9a9a;
+    text-decoration: none;
+    font-size: 0.6rem;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+    padding-left: 0;
+    transition: color 0.25s ease, transform 0.25s ease, font-weight 0.25s ease;
+    cursor: pointer;
+}
+
+.project-section-nav-link:hover {
+    color: #555;
+}
+
+.project-section-nav-link.is-active {
+    color: var(--color-text);
+    font-weight: 700;
+    transform: translateX(12px);
+}
+
+@media (max-width: 1100px) {
+    .project-section-nav {
+        display: none;
+    }
 }
 
 .section-title-number {
@@ -565,8 +604,36 @@ body {
     max-width: 60%;
 }
 
+.project-image .medium-image {
+    max-width: 80%;
+}
+
 .project-image .slightly-larger-image {
     max-width: 95%;
+}
+
+/* Full-viewport color band behind a project image */
+.project-image .project-fullbleed-band {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 0;
+}
+
+.project-image .project-fullbleed-band-img {
+    max-width: min(95%, 960px);
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.project-image .project-fullbleed-band-img-sm {
+    max-width: min(85%, 880px);
 }
 
 /* Reading App: full-width phone mocks, larger than ap1–ap3 row thumbnails */
@@ -578,6 +645,58 @@ body {
 /* Wonder Mat page: larger stills + GIFs */
 .project-image.mat-project-images > img {
     max-width: min(100%, 960px);
+}
+
+.project-image.mat-project-images .mat-final-photos-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 56px;
+}
+
+.project-image.mat-project-images .mat-final-photos-stack img {
+    max-width: min(100%, 960px);
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.project-image.mat-project-images .mat-larger-wrap {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.project-image.mat-project-images .mat-larger-img {
+    width: min(100vw - 48px, 1200px);
+    max-width: min(100vw - 48px, 1200px);
+    height: auto;
+    display: block;
+}
+
+/* Full-viewport grey band behind mat1.2 */
+.project-image.mat-project-images .mat-fullbleed-band {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-color: #EFEFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.project-image.mat-project-images .mat-fullbleed-band-img {
+    max-width: min(100%, 960px);
+    width: auto;
+    height: auto;
+    display: block;
 }
 
 .project-image.mat-project-images .mat-png-stack {
@@ -594,7 +713,8 @@ body {
     height: auto;
 }
 
-.project-image.mat-project-images .mat-gif-duo img {
+.project-image.mat-project-images .mat-gif-duo img,
+.project-image.mat-project-images .mat-future-duo img {
     max-width: min(49%, 580px);
 }
 
@@ -764,7 +884,7 @@ body {
     }
     
     .filtered-images-section {
-        padding: 60px var(--spacing-container) 48px var(--spacing-container);
+        padding: 60px var(--spacing-container) 24px var(--spacing-container);
         min-height: 0;
     }
     
