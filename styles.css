@@ -392,22 +392,23 @@ body {
 /* PROJECT GRID */
 .project-grid {
     grid-column: span 12;
-    column-count: 2; /* Two column masonry layout */
-    column-gap: 40px; /* Space between columns */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
     max-width: 1200px;
-    margin: 0 auto; /* Center the grid horizontally */
-    padding-top: 60px; /* Spacing after filter section */
+    margin: 0 auto;
+    padding-top: 60px;
 }
 
 .project-card {
     border-bottom: 1px solid var(--color-border);
     cursor: pointer;
     transition: opacity 0.4s, transform 0.8s ease-out;
-    display: inline-block; /* Required for column layout */
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    break-inside: avoid; /* Prevent items from breaking across columns */
-    margin-bottom: 100px; /* Increased vertical spacing between items */
-    page-break-inside: avoid; /* For older browsers */
+    min-width: 0;
+    margin-bottom: 60px;
     opacity: 0;
     transform: translateY(12px);
 }
@@ -982,7 +983,7 @@ body {
     .project-grid {
         max-width: 100%;
         padding: 0 var(--spacing-container);
-        column-count: 2; /* Keep two columns on tablets */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1032,8 +1033,8 @@ body {
     .project-grid {
         max-width: 100%;
         padding: 40px var(--spacing-container) 0 var(--spacing-container);
-        column-count: 1; /* Single column on mobile */
-        column-gap: 0; /* No column gap on mobile */
+        grid-template-columns: 1fr;
+        gap: 0;
     }
     
     .project-card {
@@ -1197,9 +1198,13 @@ html:lang(zh) .project-meta h3 {
 }
 
 .archive-footer {
-    grid-column: span 12;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px var(--spacing-container) 100px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .archive-footer-link {
