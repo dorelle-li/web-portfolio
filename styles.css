@@ -392,9 +392,8 @@ body {
 /* PROJECT GRID */
 .project-grid {
     grid-column: span 12;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 40px;
+    column-count: 2;
+    column-gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 60px;
@@ -404,11 +403,11 @@ body {
     border-bottom: 1px solid var(--color-border);
     cursor: pointer;
     transition: opacity 0.4s, transform 0.8s ease-out;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     width: 100%;
-    min-width: 0;
-    margin-bottom: 60px;
+    break-inside: avoid;
+    margin-bottom: 100px;
+    page-break-inside: avoid;
     opacity: 0;
     transform: translateY(12px);
 }
@@ -983,7 +982,7 @@ body {
     .project-grid {
         max-width: 100%;
         padding: 0 var(--spacing-container);
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-count: 2;
     }
 }
 
@@ -1033,8 +1032,8 @@ body {
     .project-grid {
         max-width: 100%;
         padding: 40px var(--spacing-container) 0 var(--spacing-container);
-        grid-template-columns: 1fr;
-        gap: 0;
+        column-count: 1;
+        column-gap: 0;
     }
     
     .project-card {
