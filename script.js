@@ -279,11 +279,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    clearFilterBtn.addEventListener('click', () => {
-        selectedKeywords.clear();
-        keywordButtons.forEach(btn => btn.classList.remove('active'));
-        displayFilteredImages();
-    });
+    if (clearFilterBtn) {
+        clearFilterBtn.addEventListener('click', () => {
+            selectedKeywords.clear();
+            keywordButtons.forEach(btn => btn.classList.remove('active'));
+            displayFilteredImages();
+        });
+    }
 
     // Scroll animation for project cards
     const projectCardsForScroll = document.querySelectorAll('.project-card[data-project]');

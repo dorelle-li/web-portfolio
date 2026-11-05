@@ -1,0 +1,6 @@
+.DS_Store
+
+# Too large for GitHub — host on Google Drive instead
+img/dp infographic.pdf
+img/animation/*.mp4
+img/animation/*.mov
