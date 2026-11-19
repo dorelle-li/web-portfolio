@@ -11,6 +11,10 @@
     --header-height: 80px;
 }
 
+html {
+    font-size: clamp(17px, 15px + 0.25vw, 20px);
+}
+
 body {
     margin: 0;
     font-family: 'Schibsted Grotesk', sans-serif;
@@ -173,7 +177,7 @@ body {
 }
 
 .bio-text {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1.38;
     font-weight: 700;
     margin: 0;
@@ -196,14 +200,14 @@ body {
 .filtered-images-container {
     max-width: 1200px;
     width: 100%;
-    height: 500px;
+    height: 580px;
     margin: 0 auto;
     position: relative;
 }
 
 @media (max-width: 1024px) {
     .filtered-images-container {
-        height: 540px;
+        height: 620px;
         max-width: 100%;
     }
     
@@ -218,7 +222,7 @@ body {
 
 @media (max-width: 768px) {
     .filtered-images-container {
-        height: 480px;
+        height: 560px;
     }
     
     /* 1 Bamboo Lamp, 2 9-5, 3 Timer Speaker, 4 Easy SPAM, 5 Camera Bag, 6 Wonder Mat */
@@ -247,7 +251,7 @@ body {
    Order matches filtered-image-item children in index.html */
 /* Child 1: lamp.jpg - Bamboo Lamp (bamboolamp) */
 .filtered-image-item:nth-child(1) {
-    top: 12%;
+    top: 14%;
     left: 40%;
     width: 14%;
 }
@@ -287,6 +291,55 @@ body {
     width: 20%;
 }
 
+/* Archive covers (children 7–14) */
+.filtered-image-item:nth-child(7) {
+    bottom: 8%;
+    left: 54%;
+    width: 12%;
+}
+
+.filtered-image-item:nth-child(8) {
+    top: 0%;
+    left: 36%;
+    width: 10%;
+}
+
+.filtered-image-item:nth-child(9) {
+    bottom: 48%;
+    left: -4%;
+    width: 10%;
+}
+
+.filtered-image-item:nth-child(10) {
+    top: 30%;
+    right: 13%;
+    width: 11%;
+}
+
+.filtered-image-item:nth-child(11) {
+    bottom: 22%;
+    left: 35%;
+    width: 12%;
+}
+
+.filtered-image-item:nth-child(12) {
+    top: 12%;
+    right: 30%;
+    width: 10%;
+}
+
+.filtered-image-item:nth-child(13) {
+    top: 33%;
+    left: 18%;
+    width: 12%;
+}
+
+.filtered-image-item:nth-child(14) {
+    top: 33%;
+    right: -5%;
+    width: 11%;
+}
+
 .filtered-image-item.visible {
     visibility: visible;
     opacity: 1;
@@ -313,7 +366,7 @@ body {
 /* FILTER SECTION */
 .filter-section {
     grid-column: span 12;
-    padding: 20px var(--spacing-container) 20px var(--spacing-container);
+    padding: 20px var(--spacing-container);
     border-bottom: 1px solid var(--color-border);
     position: relative;
     z-index: 2;
@@ -321,16 +374,18 @@ body {
 }
 
 .filter-sidebar {
-    max-width: 1200px;
+    width: 100%;
+    max-width: min(1280px, 100%);
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
 }
 
 .filter-title {
+    flex-shrink: 0;
     font-size: 0.85rem;
     font-weight: 600;
     margin: 0;
@@ -341,12 +396,18 @@ body {
 
 .keyword-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 8px;
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
 }
 
 .keyword-btn {
+    flex-shrink: 0;
     padding: 6px 12px;
     border: 1px solid var(--color-border);
     background: transparent;
@@ -370,6 +431,7 @@ body {
 }
 
 .clear-filter-btn {
+    flex-shrink: 0;
     padding: 6px 12px;
     border: 1px solid var(--color-border);
     background: transparent;
@@ -484,7 +546,7 @@ body {
 }
 
 .project-title {
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 700;
     margin: 0 0 10px 0;
     line-height: 1.22;
@@ -953,7 +1015,7 @@ body {
 }
 
 .info-title {
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 700;
     margin: 0 0 60px 0;
     line-height: 1.1;
@@ -1001,7 +1063,7 @@ body {
     }
     
     .bio-text {
-        font-size: 32px;
+        font-size: 2rem;
     }
     
     .filtered-images-section {
@@ -1045,7 +1107,7 @@ body {
     }
     
     .project-title {
-        font-size: 32px;
+        font-size: 2rem;
     }
     
     .project-description {
@@ -1061,7 +1123,7 @@ body {
     }
     
     .info-title {
-        font-size: 32px;
+        font-size: 2rem;
     }
     
     .info-text {
@@ -1075,7 +1137,7 @@ body {
 
 @media (max-width: 480px) {
     .bio-text {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     
     .logo {
@@ -1094,7 +1156,7 @@ body {
     }
     
     .project-title {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     
     .project-description {
@@ -1102,7 +1164,7 @@ body {
     }
     
     .info-title {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     
     .info-text {
